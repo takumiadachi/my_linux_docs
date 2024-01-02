@@ -32,4 +32,10 @@ sudo mv nvim.appimage /usr/local/bin/nvim
 ## Linux Cmds
 ```bash
 nmap -p 22 142.104.8.188
+
+# To prevent your Linux system from suspending or going into hibernation, you need to disable the following systemd targets:
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+# To re-enable the suspend and hibernation modes, run the command:
+sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
