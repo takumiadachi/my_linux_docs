@@ -28,3 +28,8 @@ curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 ```
+
+## Linux Cmds
+```bash
+nmap -p 22 142.104.8.188
+```
