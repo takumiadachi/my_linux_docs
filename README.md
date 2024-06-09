@@ -36,11 +36,13 @@ sudo systemctl start smb nmb
 
 sudo nano /etc/samba/smb.conf
 
-[tadachi_share]
-        path = /home/tadachi
-        valid users = tadachi
-        read only = no
-        browsable = yes
+# If SELinux is enforcing, you need to set the correct context for the home directory:
+sudo setsebool -P samba_enable_home_dirs 1
+sudo chcon -R -t samba_share_t /home/tadachi
+
+Ensure the home directory and its contents have the correct permissions:
+sudo chown -R tadachi:tadachi /home/tadachi
+sudo chmod -R 755 /home/tadachi
 
 sudo smbpasswd -a tadachi
 
