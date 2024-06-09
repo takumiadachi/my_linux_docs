@@ -57,4 +57,7 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 
 # To re-enable the suspend and hibernation modes, run the command:
 sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+# List ips nicely
+ip a
 ```
