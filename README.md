@@ -37,10 +37,10 @@ sudo systemctl start smb nmb
 sudo nano /etc/samba/smb.conf
 
 [tadachi_share]
-path = /home/tadachi
-valid users = tadachi
-read only = no
-browsable = yes
+        path = /home/tadachi
+        valid users = tadachi
+        read only = no
+        browsable = yes
 
 sudo smbpasswd -a tadachi
 
