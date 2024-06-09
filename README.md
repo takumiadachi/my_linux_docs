@@ -27,6 +27,25 @@ sudo dnf install neovim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
+
+# Setup SMB
+sudo dnf install samba samba-client
+
+sudo systemctl enable smb nmb
+sudo systemctl start smb nmb
+
+sudo nano /etc/samba/smb.conf
+
+[tadachi_share]
+path = /home/tadachi
+valid users = tadachi
+read only = no
+browsable = yes
+
+sudo smbpasswd -a tadachi
+
+sudo systemctl restart smb
+sudo systemctl restart nmb
 ```
 
 ## Linux Cmds
