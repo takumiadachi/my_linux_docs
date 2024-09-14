@@ -50,6 +50,21 @@ sudo systemctl restart smb
 sudo systemctl restart nmb
 ```
 
+## Postgres
+```
+sudo dnf update -y
+sudo dnf module reset postgresql -y
+sudo dnf install postgresql-server postgresql-contrib
+sudo systemctl enable postgresql
+sudo postgresql-setup --initdb --unit postgresql
+plsql tadachi
+sudo psql tadachi
+psql
+sudo systemctl start postgresql
+sudo -u postgres psql
+psql tadachi
+```
+
 ## Linux Cmds
 ```bash
 nmap -p 22 142.104.8.188
